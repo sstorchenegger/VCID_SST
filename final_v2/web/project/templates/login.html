@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="" method="post">
+        {{ form.csrf_token }}
+        <div>
+
+            {{form.email.label}}
+            {{form.email}}
+        </div>
+        <br>
+        <div>
+
+            {{form.password.label}}
+            {{form.password}}
+        </div>
+        <br>
+        {{form.submit}}
+        
+    </form>
+</body>
+</html>

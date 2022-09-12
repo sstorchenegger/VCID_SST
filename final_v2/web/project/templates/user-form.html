@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <a href="/">back</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <h1>Update</h1>
+    <form action="/user-edit/{{user.id}}" method="post">
+        {{ form.csrf_token }}
+        <div>
+
+            {{form.surname.label}}
+            {{form.surname}}
+        </div>
+        <br>
+        <div>
+
+            {{form.pre_name.label}}
+            {{form.pre_name}}
+        </div>
+        
+        <br>
+        <div>
+
+            {{form.birthday.label}}
+            {{form.birthday}}
+        </div>
+
+        <br>
+        <div>
+
+            {{form.address.label}}
+            {{form.address}}
+        </div>
+
+        <br>
+        <div>
+
+            {{form.comments.label}}
+            {{form.comments}}
+        </div>
+
+        <br>
+        <div>
+
+            {{form.hobby.label}}
+            {{form.hobby}}
+        </div>
+
+        <br>
+        <div>
+
+            {{form.email.label}}
+            {{form.email}}
+        </div>
+
+        <br>
+        <div>
+
+            {{form.password.label}}
+            {{form.password}}
+        </div>
+
+        <br>
+        {{form.submit}}
+        
+    </form>
+</body>
+</html>

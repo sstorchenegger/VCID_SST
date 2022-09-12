@@ -1,0 +1,158 @@
+
+----------------------------------------------------------------------
+ssh from terminal: (AWS EC2 Ubuntu os login from ssh using terminal)
+----------------------------------------------------------------------
+
+ssh -i flask_key.pem ubuntu@52.23.211.57
+
+sudo apt update
+
+sudo apt install docker-compose
+
+git clone https://github.com/sstorchenegger/VCID_SST
+
+cd <project_folder>
+
+sudo docker-compose up --build -d
+
+sudo docker-compose exec web python manage.py create_db
+
+sudo docker-compose exec web python manage.py seed_db
+
+--------------------------------------------------------------
+
+
+To view the site:
+ 
+http://52.23.211.57:5000
+
+--------------------------------------------------------------
+
+post request 
+http://52.23.211.57:5000/api/create
+
+json input
+{
+    "surname":"New surame",
+    "pre_name":"New prename",
+    "birthday":"05-11-1993",
+    "address":"new address",
+    "comments":"i love docker",
+    "hobby":"sleeping",
+    "email":"user@email.com",
+    "password":"password",
+    "is_admin":true
+}
+
+------------------------------------------------------
+
+GET
+http://52.23.211.57:5000/api/users
+
+-------------------------------------------------------
+
+POST
+http://52.23.211.57:5000/api/login
+
+json input:
+{
+        "email":"user@email.com",
+        "password":"password"
+}
+
+-------------------------------------------------
+PUT
+http://52.23.211.57:5000/api/update/<int:user_id>
+
+json input
+{
+    "surname":"New surame",
+    "pre_name":"New prename",
+    "birthday":"05-11-1993",
+    "address":"new address",
+    "comments":"i love docker",
+    "hobby":"sleeping",
+    "email":"user@email.com"
+}
+-------------------------------------------------------------
+PUT
+http://52.23.211.57:5000/api/update/<int:admin_id>/<int:user_id>
+
+json input
+{
+    "surname":"New surame",
+    "pre_name":"New prename",
+    "birthday":"05-11-1993",
+    "address":"new address",
+    "comments":"i love docker",
+    "hobby":"sleeping",
+    "email":"user@email.com"
+}
+-------------------------------------------------
+Benutzer fürs Testing:
+-------------------------------------------------
+
+[
+	{
+		"address": null,
+		"birthday": null,
+		"comments": null,
+		"email": "admin@email.com",
+		"hobby": null,
+		"id": 1,
+		"is_admin": true,
+		"pre_name": "admin",
+		"surname": "admin"
+	},
+	{
+		"address": "new address",
+		"birthday": "05-11-1993",
+		"comments": "i love docker",
+		"email": "user1@email.com",
+		"hobby": "sleeping",
+		"id": 2,
+		"is_admin": false,
+		"pre_name": "user",
+		"surname": "1"
+	},
+	{
+		"address": "new address",
+		"birthday": "05-11-1993",
+		"comments": "i love docker",
+		"email": "user2@email.com",
+		"hobby": "sleeping",
+		"id": 3,
+		"is_admin": false,
+		"pre_name": "user",
+		"surname": "2"
+	},
+	{
+		"address": "new address",
+		"birthday": "05-11-1993",
+		"comments": "i love docker",
+		"email": "user3@email.com",
+		"hobby": "sleeping",
+		"id": 4,
+		"is_admin": false,
+		"pre_name": "user",
+		"surname": "3"
+	},
+	{
+		"address": "new address",
+		"birthday": "05-11-1993",
+		"comments": "i love docker",
+		"email": "user4@email.com",
+		"hobby": "sleeping",
+		"id": 5,
+		"is_admin": false,
+		"pre_name": "user",
+		"surname": "4"
+	}
+]
+----------------------------------------------------------------
+
+for admin user email : admin@email.com password: 1234
+for other user password : password
+
+
+
